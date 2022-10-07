@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Characters from "./components/Characters/Characters"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle';
+import Test from "./components/Test";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  const [data,setData] = useState({
+    fname:'asd',
+    lname:'cvb'
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <h1>from app.js{data.fname} {data.lname}</h1>
+    {/* <Test data={data} setData={setData}/> */}
+      <Characters />
+    </>
+  )
 }
 
-export default App;
+export default App
